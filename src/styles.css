@@ -1,0 +1,41 @@
+:root{
+  --bg:#f8fafc;
+  --accent:#0366d6;
+  --muted:#6b7280;
+}
+body{font-family:system-ui,Segoe UI,Roboto,Arial;background:var(--bg);margin:0;color:#111}
+.app-container{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+nav.nav{background:white;padding:20px;border-right:1px solid #e5e7eb}
+nav.nav .brand{margin:0 0 12px 0}
+nav.nav ul{list-style:none;padding:0;margin:0}
+nav.nav li{margin:8px 0}
+nav.nav a{color:var(--accent);text-decoration:none}
+main{padding:24px}
+.form{display:flex;flex-direction:column;gap:8px;max-width:640px}
+.form label{display:flex;flex-direction:column}
+.form input,.form textarea{padding:8px;border:1px solid #d1d5db;border-radius:4px}
+.success{color:green}
+.video-container{max-width:720px}
+.ingredient{display:flex;gap:8px;margin:8px 0}
+
+/* Diagram responsiveness */
+.diagram{overflow:auto;max-width:100%;margin-top:16px}
+.diagram svg{max-width:100%;height:auto;display:block}
+
+/* Recipe preview */
+.preview{max-width:720px;border:1px solid #e6e7eb;padding:8px;border-radius:6px;margin-top:12px;background:white}
+.preview iframe{background:white}
+
+/* Responsive video embeds */
+.responsive-video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}
+.responsive-video.half-height{padding-bottom:28.125%}
+.responsive-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video .watch-link{font-size:0.95rem;color:var(--muted);margin-top:8px}
+.video.responsive-video{margin-top:12px;margin-bottom:18px;max-width:720px;width:100%;margin-left:auto;margin-right:auto}
+
+/* Inputs/aside */
+aside label{display:block;margin-top:8px}
+aside input, aside select{width:100%;padding:6px;border:1px solid #e6e7eb;border-radius:4px}
+aside button{padding:8px 10px;border-radius:4px;background:#0366d6;color:white;border:none;cursor:pointer}
+aside button:nth-child(2){background:#eee;color:#111}
+
