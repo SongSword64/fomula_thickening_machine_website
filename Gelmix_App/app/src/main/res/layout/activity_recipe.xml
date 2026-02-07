@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipe Lookup"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select formula details to get the right recipe"
+            android:layout_marginBottom="24dp" />
+
+        <!-- TODO: Add spinners for brand, type, thickness -->
+        <!-- TODO: Add input for volume -->
+        <!-- TODO: Add button to generate recipe -->
+        <!-- TODO: Add TextView to display instructions -->
+
+        <TextView
+            android:id="@+id/tv_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipe UI coming soon"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+</ScrollView>
