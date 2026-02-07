@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GelmixApp"
+        tools:targetApi="31">
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.GelmixApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Recipe Lookup Activity -->
+        <activity
+            android:name=".activities.RecipeActivity"
+            android:label="@string/recipe_lookup"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Resources Activity -->
+        <activity
+            android:name=".activities.ResourcesActivity"
+            android:label="@string/resources"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Purchase Activity -->
+        <activity
+            android:name=".activities.PurchaseActivity"
+            android:label="@string/purchase"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Feeding Log Activity -->
+        <activity
+            android:name=".activities.FeedingLogActivity"
+            android:label="@string/feeding_log"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Data Sharing Activity -->
+        <activity
+            android:name=".activities.DataSharingActivity"
+            android:label="@string/data_sharing"
+            android:parentActivityName=".activities.SettingsActivity" />
+
+        <!-- Notification Receiver for feeding follow-ups -->
+        <receiver
+            android:name=".notifications.FeedingReminderReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.gelmix.app.FEEDING_REMINDER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Notification Receiver for purchase reminders -->
+        <receiver
+            android:name=".notifications.PurchaseReminderReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.gelmix.app.PURCHASE_REMINDER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Boot receiver to reschedule notifications -->
+        <receiver
+            android:name=".notifications.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
